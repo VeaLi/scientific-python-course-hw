@@ -1,17 +1,18 @@
-![](weather_final.png)
-
-
 ```python
 """
 Dataset contains min and max weather temperatures for certain days. 
 See desirable output in figure.
 """
 import datetime
+
 import pandas as pd
+
 # Tips:
 # use datetime.datetime
 # use pivot_table in the end
 ```
+
+![to obtain](weather_final.png)
 
 
 ```python
@@ -110,9 +111,8 @@ df['id'] = df['id'].str.strip()
 
 
 ```python
-df = df.melt(id_vars=['id','year','month','element'])
+df = df.melt(id_vars=['id', 'year', 'month', 'element'])
 df.head(2)
-
 ```
 
 
@@ -171,8 +171,8 @@ df.head(2)
 
 
 ```python
-df['date'] = df['year'].astype(
-    'str')+'-'+df['month'].astype('str')+'-'+df['variable'].str.replace('d', '')
+df['date'] = df['year'].astype('str') + '-' + df['month'].astype(
+    'str') + '-' + df['variable'].str.replace('d', '')
 ```
 
 
@@ -182,7 +182,10 @@ df['date'] = pd.to_datetime(df['date'])
 
 
 ```python
-df = pd.pivot_table(df, values=['value'], columns=['element'], index = ['id','date'])
+df = pd.pivot_table(df,
+                    values=['value'],
+                    columns=['element'],
+                    index=['id', 'date'])
 ```
 
 
@@ -259,8 +262,3 @@ df
 </div>
 
 
-
-
-```python
-
-```
