@@ -105,7 +105,7 @@ def to_graph(IN):
 ```python
 # TEST 1
 G = to_graph(IN1)
-for node in G.nodes:
+for node in sorted(G.nodes):
     print(f"{node} : {len(nx.descendants(G, node))+1}")
 ```
 
@@ -118,7 +118,7 @@ for node in G.nodes:
 ```python
 # TEST 2
 G = to_graph(IN2)
-for node in G.nodes:
+for node in sorted(G.nodes):
     print(f"{node} : {len(nx.descendants(G, node))+1}")
 ```
 
@@ -126,6 +126,6 @@ for node in G.nodes:
     B : 1
     C : 4
     D : 2
-    F : 3
     E : 1
+    F : 3
     
